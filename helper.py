@@ -57,6 +57,7 @@ def preprocess_images(image_path, mask_path, max_dim):
     image_pil = read_image(image_path).convert('RGB')
     mask_pil = read_image(mask_path).convert('RGB')
 
+    max_dim = int(max_dim)
     image_pil, mask_pil = max_dimension_resize(image_pil, mask_pil, max_dim)
 
     image_np = pil_to_np_array(image_pil)
